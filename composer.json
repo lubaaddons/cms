@@ -9,8 +9,16 @@
     ],
     "autoload": {
         "psr-4": {
-            "Luba\\CMS\\": "cms/"
-        }
+            "Luba\\CMS\\": "cms/",
+            "Luba\\Commands\\": "commands/"
+        },
+        "classmap": [
+            "aliases"
+        ]
+    },
+    "scripts": {
+        "post-update-cmd": [
+            
+        ]
     }
 }
-
