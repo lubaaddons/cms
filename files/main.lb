@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+
+		<insert::body>
+
+	</body>
+
+	<style>
+
+	* {
+		font-family:"Open Sans";
+	}
+	h1 {
+		font-size:60px;
+		font-weight:lighter;
+		color:lightgrey;
+		width: 460px;
+		margin:20% auto;
+		transition: all 2s;
+		text-align: center;
+	}
+	h1 span {
+		transition: all 2s;
+		font-size:30px;
+		color:grey;
+		display:block;
+		margin:auto;
+		width:442px;
+		opacity:0;
+	}
+
+	</style>
+
+	<script>
+	$(document).ready(function(){
+		setTimeout(function(){
+			$('h1').css('margin-top', '17%');
+			setTimeout(function(){
+				$('h1 span').css('opacity', '1');
+			}, 1500);
+		}, 1000);
+	});
+	</script>
+
+</html>

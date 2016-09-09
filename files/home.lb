@@ -1,0 +1,9 @@
+<parent::master>
+
+<fill::body>
+
+	<h1>Luba Framework<span><br>The small and simple Framework</span></h1>
+
+</fill::body>
+
+</html>

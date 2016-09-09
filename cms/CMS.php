@@ -9,7 +9,12 @@ class CMS
 {
 	public static function getPageRoutes()
 	{
-		$db = SQL::table('routes')->select('routes.route as route, pagetypes.name as name')->leftJoin('pagetpes', 'routes.pagetype_id', 'pagetypes.id')->get()->toArray();
+		if (php_sapi_name() == 'cli')
+		{
+			return [];
+		}
+
+		$db = SQL::table('routes')->select('routes.route as route, pagetypes.name as name')->leftJoin('pagetypes', 'routes.pagetype_id', 'pagetypes.id')->get()->toArray();
 
 		$routes = [];
 
@@ -32,5 +37,10 @@ class CMS
 		SQL::createBasic('pagetypes', function(Blueprint $table){
 			$table->string('name');
 		});
+	}
+
+	public static function fillDatabase()
+	{
+		
 	}
 }
