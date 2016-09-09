@@ -9,7 +9,16 @@ class CMS
 {
 	public static function getPageRoutes()
 	{
-		
+		$db = SQL::table('routes')->select('routes.route as route, pagetypes.name as name')->leftJoin('pagetpes', 'routes.pagetype_id', 'pagetypes.id')->get()->toArray();
+
+		$routes = [];
+
+		foreach ($db as $route => $pagetype)
+		{
+			$routes[$route] = "{§pagetype}Controller";
+		}
+
+		return $routes;
 	}
 
 	public static function createDatabaseStructure()
