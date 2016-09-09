@@ -10,7 +10,8 @@
     "autoload": {
         "psr-4": {
             "Luba\\CMS\\": "cms/",
-            "Luba\\Commands\\": "commands/"
+            "Luba\\Commands\\": "commands/",
+            "Luba\\Controllers\\": "controllers"
         },
         "classmap": [
             "aliases"

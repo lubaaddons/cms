@@ -28,5 +28,9 @@ class InitCMS extends Command
 		unlink(view_path('master.lb'));
 		copy("{$filepath}home.lb", view_path('pages/HomePage.lb'));
 		copy("{$filepath}main.lb", view_path('main.lb'));
+
+		print "Creating Controllers...\n";
+		copy("{$filepath}Controller.php", base_path('controllers/Controller.php'));
+		copy("{$filepath}HomePageController.php", base_path('controllers/HomePageController.php'));
 	}
 }

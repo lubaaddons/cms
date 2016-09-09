@@ -43,4 +43,9 @@ class CMS
 	{
 		
 	}
+
+	public function createPagetype($pagetype)
+	{
+		
+	}
 }
