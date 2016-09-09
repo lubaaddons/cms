@@ -17,5 +17,6 @@ class InitCMS extends Command
 		print "Creating database structure...\n";
 		CMS::createDatabaseStructure();
 
+		
 	}
 }
