@@ -22,9 +22,6 @@ class InitCMS extends Command
 		print "Creating database structure...\n";
 		CMS::createDatabaseStructure();
 
-		print "Adding initial data...\n";
-		//CMS::fillDatabase();
-
 		print "Creating new view structure...\n";
 
 		if (file_exists(view_path('home.lb')))
@@ -45,6 +42,10 @@ class InitCMS extends Command
 			unlink(base_path('controllers/Controller.php'));
 		copy("{$filepath}HomePage.php", base_path('controllers/HomePage.php'));
 
+		print "Building Tables...";
 		parent::exec("BuildTables");
+
+		print "Adding initial data...\n";
+		CMS::addInitialData();
 	}
 }

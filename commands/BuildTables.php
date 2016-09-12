@@ -26,6 +26,8 @@ class BuildTables extends Command
 					}
 				});
 
+				SQL::table('pagetypes')->insert(['name' => $name]);
+
 				echo "\033[32m Created $name table.\n";
 
 				foreach ($fields as $type => $col)
