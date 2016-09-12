@@ -39,9 +39,9 @@ class CMS
 		});
 	}
 
-	public static function fillDatabase()
+	public static function buildPagetypes()
 	{
-		
+
 	}
 
 	public function createPagetype($pagetype)

@@ -18,8 +18,28 @@ class CMSController extends BaseController
 
 	protected static $manyMany = [];
 
+	public function __construct()
+	{
+		
+	}
+
 	public function index()
 	{
 		
+	}
+
+	public static function fields()
+	{
+		return static::$fields;
+	}
+
+	public static function hasMany()
+	{
+		return static::$hasMany;
+	}
+
+	public static function manyMany()
+	{
+		return static::$manyMany;
 	}
 }
