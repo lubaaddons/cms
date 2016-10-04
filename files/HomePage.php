@@ -5,8 +5,8 @@ namespace Luba\Controllers;
 class HomePage extends Controller
 {
 	protected static $fields = [
-		'text' => 'content',
-		'string' => 'headline'
+		'content' => 'text',
+		'headline' => 'string'
 	];
 
 	protected static $hasMany = [];

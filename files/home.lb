@@ -2,7 +2,11 @@
 
 <fill::body>
 
-	<h1>$$headline<span><br>$$content</span></h1>
+	<h1>
+		$$headline
+		<br>
+		<span>$$content</span>
+	</h1>
 
 </fill::body>
 

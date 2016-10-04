@@ -20,7 +20,7 @@ class BuildTables extends Command
 			if (!SQL::tableExists($name))
 			{
 				SQL::createBasic($name, function($table) use ($fields){
-					foreach ($fields as $type => $name)
+					foreach ($fields as $name => $type)
 					{
 						$table->$type($name);
 					}
@@ -30,7 +30,7 @@ class BuildTables extends Command
 
 				echo "\033[32m Created $name table.\n";
 
-				foreach ($fields as $type => $col)
+				foreach ($fields as $col => $type)
 				{
 					echo "\033[32m $name table: Added '$col' column ($type)\n";
 				}
@@ -43,13 +43,11 @@ class BuildTables extends Command
 
 				foreach ($columns as $column)
 				{
-					$key = array_search($column->Field, $fieldarray);
-
-					if ($key !== false)
-						unset($fieldarray[$key]);
+					if (isset($fieldarray[$column->Field]))
+						unset($fieldarray[$column->Field]);
 				}
 
-				foreach ($fieldarray as $type => $col)
+				foreach ($fieldarray as $col => $type)
 				{
 					SQL::alter($name, function($table) use ($type, $col){
 						$table->$type($col);
@@ -67,7 +65,7 @@ class BuildTables extends Command
 					if ($dbfield == 'created_at' or $dbfield == 'updated_at' or $dbfield == 'id')
 						continue;
 
-					if (array_search($dbfield, $fields) === false)
+					if (isset($fields[$dbfield]) === false)
 					{
 						SQL::alter($name, function($table) use ($dbfield){
 							$table->dropColumn($dbfield);

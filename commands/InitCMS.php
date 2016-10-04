@@ -42,7 +42,7 @@ class InitCMS extends Command
 			unlink(base_path('controllers/Controller.php'));
 		copy("{$filepath}HomePage.php", base_path('controllers/HomePage.php'));
 
-		print "Building Tables...";
+		print "Building Tables...\n";
 		parent::exec("BuildTables");
 
 		print "Adding initial data...\n";
